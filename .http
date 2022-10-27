@@ -1,0 +1,32 @@
+###
+GET http://localhost:3000/api/actors
+
+###
+POST http://localhost:3000/api/actors
+Content-Type: application/json
+
+{
+    "first_name": "Phat",
+    "last_name": "Nguyen"
+}
+
+// Film
+###
+GET http://localhost:3000/api/films
+
+###
+POST http://localhost:3000/api/films
+Content-Type: application/json
+
+{
+    "title": "The Matrix",
+    "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "release_year": 1999,
+    "language_id": 1,
+    "rental_duration": 3,
+    "rental_rate": 4.99,
+    "length": 136,
+    "replacement_cost": 19.99,
+    "rating": "R",
+   "special_features": "Trailers,Commentaries"
+}

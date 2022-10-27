@@ -1,0 +1,66 @@
+components:
+  schemas:
+    Actor:
+      type: object
+      required:
+        - first_name
+        - last_name
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        last_update:
+          type: string
+      example:
+        first_name: 'Phat'
+        last_name: 'Nguyen'
+        last_update: '2020-12-12 12:12:12'
+    Film:
+      type: object
+      required:
+        - title
+        - description
+        - release_year
+        - language_id
+        - rental_duration
+        - rental_rate
+        - length
+        - replacement_cost
+        - rating
+        - special_features
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        release_year:
+          type: number
+        language_id:
+          type: number
+        original_language_id:
+          type: number
+        rental_duration:
+          type: number
+        rental_rate:
+          type: number
+        length:
+          type: number
+        replacement_cost:
+          type: number
+        rating:
+          type: string
+        special_features:
+          type: string
+      example:
+        title: 'The Godfather'
+        description: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.'
+        release_year: 1972
+        language_id: 1
+        original_language_id: 1
+        rental_duration: 3
+        rental_rate: 4.99
+        length: 175
+        replacement_cost: 19.99
+        rating: 'R'
+        special_features: 'Trailers,Commentaries,Behind the Scenes'

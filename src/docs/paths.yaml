@@ -1,0 +1,49 @@
+# Path: src\docs\paths.yaml
+  /api/films:
+    get:
+      summary: Get all films
+      tags: [Films]
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Film'
+    post:
+      summary: Create a new film
+      tags: [Films]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Film'
+      responses:
+        201:
+          description: The film was successfully created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Film'
+        400:
+          description: The film was not created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  error:
+                    type: string
