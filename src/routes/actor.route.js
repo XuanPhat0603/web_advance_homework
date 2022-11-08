@@ -10,10 +10,10 @@ const router = Router();
  *     summary: Get all actors
  *     tags: [Actors]
  *     responses:
- *       200:
- *         content:
- *           application/json:
- *             schema:
+ *      200:
+ *          content:
+ *          application/json:
+ *              schema:
  *               type: object
  *               properties:
  *                 ok:
@@ -23,6 +23,7 @@ const router = Router();
  *                   items:
  *                     $ref: '#/components/schemas/Actor'
  */
+
 router.get('/', getActor);
 
 /**

@@ -1,21 +1,21 @@
-import actorModel from '../models/actor.model.js';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export const getActor = async (req, res) => {
-    const list = await actorModel.findAll();
-    res.json({
-        ok: true,
-        data: list,
-    });
+	const list = await prisma.actor.findMany();
+	res.json({
+		ok: true,
+		data: list,
+	});
 };
 
 export const postActor = async (req, res) => {
-    let actor = req.body;
-    const ret = await actorModel.add(actor);
-
-    actor = {
-        actor_id: ret[0],
-        ...actor,
-    };
-
-    res.json(actor);
+	const actor = await prisma.actor.create({
+		data: {
+			first_name: req.body.first_name,
+			last_name: req.body.last_name,
+		},
+	});
+	res.json(actor);
 };
